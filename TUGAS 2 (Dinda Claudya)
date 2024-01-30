@@ -1,0 +1,110 @@
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+    int LuasPersegi (int Sisi) {
+    return pow(Sisi, 2);
+    }
+    
+    int LuasPersegiPanjang (int Panjang, int Lebar){
+    return Panjang * Lebar;
+    }
+    
+    int PI = 3.14; // Definisi nilai PI dengan presisi lebih tinggi
+
+    int lingkaran(int jarijari) {
+    return PI * pow(jarijari, 2);
+}
+
+int main() {
+    
+    string BangunDatar;
+    
+    cout << " PROGRAM UNTUK MENGHITUNG LUAS BANGUN DATAR" << endl << endl;
+    
+    while (true){
+    cout << " 1. LUAS PERSEGI" << endl;
+    cout << " 2. LUAS PERSEGI PANJANG" << endl;
+    cout << " 3. LUAS LINGKARAN" << endl;
+    cout << " MASUKKAN BANGUN DATAR YANG INGIN ANDA HITUNG LUASNYA (1/2/3) : ";
+    cin >> BangunDatar;
+    cout << endl;
+    
+        if (BangunDatar == "1"){
+        
+            int Sisi;
+        
+            cout << " MENGHITUNG LUAS PERSEGI" << endl << endl;
+        
+            cout << " MASUKKAN PANJANG SISI PERSEGI : ";
+            cin >> Sisi;
+            cout << endl;
+
+            int Luas = LuasPersegi (Sisi);
+
+            cout << " LUAS PERSEGI DENGAN PANJANG SISI " << Sisi << " CM ADALAH " << Luas << " CM²"; 
+            }
+        
+        else if (BangunDatar == "2"){
+        
+            int Panjang;
+            int Lebar;
+        
+            cout << " MENGHITUNG LUAS PERSEGI PANJANG" << endl << endl;
+        
+            cout << " MASUKKAN PANJANG PERSEGI : ";
+            cin >> Panjang;
+            cout << endl;
+        
+            cout << " MASUKKAN LEBAR PERSEGI : ";
+            cin >> Lebar;
+            cout << endl;
+
+            int Luas = LuasPersegiPanjang (Panjang, Lebar);
+
+            cout << " LUAS PERSEGI PANJANG DENGAN PANJANG " << Panjang << " CM DAN LEBAR " << Lebar << " CM ADALAH " << Luas << " CM²"; 
+            }
+        
+        else if (BangunDatar == "3") {
+            int jarijari;
+            cout << " Masukkan jari-jari: ";
+            cin >> jarijari;
+            cout << " LUAS LINGKARAN DENGAN JARI JARI " << jarijari << " CM ADALAH " << lingkaran(jarijari)<< " CM² " <<endl;
+        }
+        
+        else {
+            
+            cout << " MAAF, BANGUN DATAR YANG ANDA MASUKKAN TIDAK TERSEDIA" << endl << endl;
+            continue;
+        }
+        
+    cout << endl << endl;
+       
+    string Next;
+    
+    cout << " >> KETIK APA SAJA UNTUK MELANJUTKAN" << endl;
+    cout << " >> KETIK 1 UNTUK BERHENTI" << endl;
+    cout << " APAKAH ANDA INGIN MENGHITUNG LUAS BANGUN DATAR LAGI ? : ";
+    cin >> Next;
+    
+        if(Next == "1"){
+        break;
+        }
+        
+        else{
+        cout << endl << endl;
+        continue;
+        }
+        
+    }
+
+    return 0;
+}
